@@ -6,3 +6,7 @@ p {
     border-radius: 10px;
     margin-left: 15px;
 }
+
+header {
+    margin: auto;
+}
