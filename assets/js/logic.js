@@ -10,14 +10,37 @@
   };
   firebase.initializeApp(config);
 
+// Creating a reference to the database
+var database = firebase.database();
 
-
-
+//giving bgPreference an initial value
 var bgPrefernce;
 
-document.getElementsByTagName('body')[0].style.backgroundColor = bgPrefernce;
+// Create a variable to easily track the current bg color.
+var currentBg = bgPrefernce;
+
+//------------------------------------------------------------------
+
+database.ref().on("value", function(snapshot) {
+  // We are now inside our .on function...
+
+  // Console.log the "snapshot" value (a point-in-time representation of the database)
+  console.log(snapshot.val());
+  // This "snapshot" allows the page to get the most current values in firebase.
+  currentBg = snapshot.val().currentBg;
+
+  console.log(currentBg);
+
+  $("body").attr("backgroundColor", currentBg);
+
+}, function(errorObject) {
+    console.log("The read failed: " + errorObject.code);
+});
 
 
+
+
+// document.getElementsByTagName('body')[0].style.backgroundColor = bgPrefernce;
 
 function redBg() {
     document.getElementsByTagName('body')[0].style.backgroundColor = 'red';
@@ -29,7 +52,14 @@ function redBg() {
     document.getElementsByTagName('p')[2].style.border = 'solid 1px black';
     document.getElementsByTagName('p')[3].style.border = 'solid 1px black';
 
-    bgPrefernce = 'red';
+    currentBg = 'red';
+
+     database.ref().set({
+    currentBg: currentBg
+
+  });
+    console.log(currentBg);
+
 }
 
 function blueBg() {
@@ -41,7 +71,13 @@ function blueBg() {
     document.getElementsByTagName('p')[2].style.border = 'solid 1px white';
     document.getElementsByTagName('p')[3].style.border = 'solid 1px white';
 
-    bgPrefernce = 'blue';
+    currentBg = 'blue';
+
+     database.ref().set({
+    currentBg: currentBg
+
+  });
+    console.log(currentBg);
 }
 
 function blackBg() {
@@ -51,7 +87,13 @@ function blackBg() {
     document.getElementsByTagName('p')[1].style.border = 'solid 1px white';
     document.getElementsByTagName('p')[2].style.border = 'solid 1px white';
     document.getElementsByTagName('p')[3].style.border = 'solid 1px white';
-    bgPrefernce = 'black';
+    currentBg = 'black';
+
+     database.ref().set({
+    currentBg: currentBg
+
+  });
+    console.log(currentBg);
 
 }
 
@@ -66,5 +108,13 @@ function yellowBg() {
     document.getElementsByTagName('p')[3].style.border = 'solid 1px black';
 
 
-    bgPrefernce = 'yellow';
+    currentBg = 'yellow';
+
+    
+     database.ref().set({
+    currentBg: currentBg
+
+  });
+    console.log(currentBg);
 }
+
