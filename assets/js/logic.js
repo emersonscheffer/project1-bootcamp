@@ -13,11 +13,8 @@
 // Creating a reference to the database
 var database = firebase.database();
 
-//giving bgPreference an initial value
-var bgPrefernce;
-
 // Create a variable to easily track the current bg color.
-var currentBg = bgPrefernce;
+var currentBg;
 
 //------------------------------------------------------------------
 
@@ -29,23 +26,17 @@ database.ref().on("value", function(snapshot) {
   // This "snapshot" allows the page to get the most current values in firebase.
   currentBg = snapshot.val().currentBg;
 
-  console.log(currentBg);
-
-  $("body").attr("backgroundColor", currentBg);
+  $("body").css("backgroundColor", currentBg);
 
 }, function(errorObject) {
     console.log("The read failed: " + errorObject.code);
 });
 
-
-
-
-// document.getElementsByTagName('body')[0].style.backgroundColor = bgPrefernce;
+document.getElementsByTagName('body')[0].style.backgroundColor = currentBg;
 
 function redBg() {
     document.getElementsByTagName('body')[0].style.backgroundColor = 'red';
     document.getElementsByTagName('body')[0].style.color = 'black';
-
 
     document.getElementsByTagName('p')[0].style.border = 'solid 1px black';
     document.getElementsByTagName('p')[1].style.border = 'solid 1px black';
@@ -54,12 +45,10 @@ function redBg() {
 
     currentBg = 'red';
 
-     database.ref().set({
-    currentBg: currentBg
+    database.ref().set({
+        currentBg: currentBg
 
-  });
-    console.log(currentBg);
-
+    });
 }
 
 function blueBg() {
@@ -73,48 +62,43 @@ function blueBg() {
 
     currentBg = 'blue';
 
-     database.ref().set({
-    currentBg: currentBg
+    database.ref().set({
+        currentBg: currentBg
 
-  });
-    console.log(currentBg);
+    });
 }
 
 function blackBg() {
     document.getElementsByTagName('body')[0].style.backgroundColor = 'black';
     document.getElementsByTagName('body')[0].style.color = 'white';
+
     document.getElementsByTagName('p')[0].style.border = 'solid 1px white';
     document.getElementsByTagName('p')[1].style.border = 'solid 1px white';
     document.getElementsByTagName('p')[2].style.border = 'solid 1px white';
     document.getElementsByTagName('p')[3].style.border = 'solid 1px white';
+
     currentBg = 'black';
 
-     database.ref().set({
-    currentBg: currentBg
+    database.ref().set({
+        currentBg: currentBg
 
-  });
-    console.log(currentBg);
-
+    });
 }
 
 function yellowBg() {
     document.getElementsByTagName('body')[0].style.backgroundColor = 'yellow';
     document.getElementsByTagName('body')[0].style.color = 'black';
 
-
     document.getElementsByTagName('p')[0].style.border = 'solid 1px black';
     document.getElementsByTagName('p')[1].style.border = 'solid 1px black';
     document.getElementsByTagName('p')[2].style.border = 'solid 1px black';
     document.getElementsByTagName('p')[3].style.border = 'solid 1px black';
 
-
     currentBg = 'yellow';
 
-    
-     database.ref().set({
-    currentBg: currentBg
+    database.ref().set({
+        currentBg: currentBg
 
-  });
-    console.log(currentBg);
+    });
 }
 
