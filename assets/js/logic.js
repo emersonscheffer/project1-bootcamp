@@ -13,12 +13,11 @@
 // Creating a reference to the database
 var database = firebase.database();
 
-//giving bgPreference an initial value
-var bgPrefernce;
 
 // Create a variable to easily track the current bg color.
-var currentBg = bgPrefernce;
+var currentBg;
 
+console.log(database)
 //------------------------------------------------------------------
 
 database.ref().on("value", function(snapshot) {
@@ -31,16 +30,11 @@ database.ref().on("value", function(snapshot) {
 
   console.log(currentBg);
 
-  $("body").attr("backgroundColor", currentBg);
+  $("body").css("backgroundColor", currentBg);
 
 }, function(errorObject) {
     console.log("The read failed: " + errorObject.code);
 });
-
-
-
-
-// document.getElementsByTagName('body')[0].style.backgroundColor = bgPrefernce;
 
 function redBg() {
     document.getElementsByTagName('body')[0].style.backgroundColor = 'red';
@@ -54,12 +48,11 @@ function redBg() {
 
     currentBg = 'red';
 
-     database.ref().set({
+    database.ref().set({
     currentBg: currentBg
 
   });
     console.log(currentBg);
-
 }
 
 function blueBg() {
@@ -73,7 +66,7 @@ function blueBg() {
 
     currentBg = 'blue';
 
-     database.ref().set({
+    database.ref().set({
     currentBg: currentBg
 
   });
@@ -89,7 +82,7 @@ function blackBg() {
     document.getElementsByTagName('p')[3].style.border = 'solid 1px white';
     currentBg = 'black';
 
-     database.ref().set({
+    database.ref().set({
     currentBg: currentBg
 
   });
@@ -110,8 +103,8 @@ function yellowBg() {
 
     currentBg = 'yellow';
 
-    
-     database.ref().set({
+
+    database.ref().set({
     currentBg: currentBg
 
   });
