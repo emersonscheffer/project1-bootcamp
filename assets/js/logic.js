@@ -1,104 +1,176 @@
+//   // Initialize Firebase
+//   var config = {
+//     apiKey: "AIzaSyCNgqiTrbz6iK--BjUnhsdoTmmsUhIYF1Q",
+//     authDomain: "project1-6dc14.firebaseapp.com",
+//     databaseURL: "https://project1-6dc14.firebaseio.com",
+//     projectId: "project1-6dc14",
+//     storageBucket: "project1-6dc14.appspot.com",
+//     messagingSenderId: "846245294444"
+//   };
+//   firebase.initializeApp(config);
 
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyCNgqiTrbz6iK--BjUnhsdoTmmsUhIYF1Q",
-    authDomain: "project1-6dc14.firebaseapp.com",
-    databaseURL: "https://project1-6dc14.firebaseio.com",
-    projectId: "project1-6dc14",
-    storageBucket: "project1-6dc14.appspot.com",
-    messagingSenderId: "846245294444"
-  };
-  firebase.initializeApp(config);
-
-// Creating a reference to the database
-var database = firebase.database();
+// // Creating a reference to the database
+// var database = firebase.database();
 
 // Create a variable to easily track the current bg color.
-var currentBg;
+var currentBg = localStorage.getItem('bgColor');
+
+var borderColor = localStorage.getItem('borderColor');
+
+var fontColor = localStorage.getItem('fontColor');
+
+var storedName = localStorage.getItem('userName');
+
+//updates the name on html
+$('#nameDOM').html(storedName);
+
+
+function updateName() {
+    $('#nameDOM').html(localStorage.getItem('userName'));
+    
+
+}
+
+
+//the input name will not show if a name is already assigned
+if (storedName === null) {
+    $('#startUserName').css('display', 'block');
+    $('#nameDOMHolder').css('display', 'none');
+} else {
+    $('#startUserName').css('display', 'none');
+    $('#nameDOMHolder').css('display', 'block');
+}
+
+$('#submitBtn').on('click', function () {
+    var userName = $('#name').val().trim();
+    localStorage.setItem('userName', userName);
+    updateName();
+});
+
 
 //------------------------------------------------------------------
 
-database.ref().on("value", function(snapshot) {
-  // We are now inside our .on function...
+// database.ref().on("value", function(snapshot) {
+//   // We are now inside our .on function...
 
-  // Console.log the "snapshot" value (a point-in-time representation of the database)
-  console.log(snapshot.val());
-  // This "snapshot" allows the page to get the most current values in firebase.
-  currentBg = snapshot.val().currentBg;
+//   // Console.log the "snapshot" value (a point-in-time representation of the database)
+//   console.log(snapshot.val());
+//   // This "snapshot" allows the page to get the most current values in firebase.
+//   currentBg = snapshot.val().currentBg;
 
-  $("body").css("backgroundColor", currentBg);
+//   $("body").css("backgroundColor", currentBg);
 
-}, function(errorObject) {
-    console.log("The read failed: " + errorObject.code);
-});
+// }, function(errorObject) {
+//     console.log("The read failed: " + errorObject.code);
+// });
 
 document.getElementsByTagName('body')[0].style.backgroundColor = currentBg;
+document.getElementsByTagName('body')[0].style.color = fontColor;
+document.getElementsByTagName('p')[0].style.border = borderColor;
+document.getElementsByTagName('p')[1].style.border = borderColor;
+document.getElementsByTagName('p')[2].style.border = borderColor;
+document.getElementsByTagName('p')[3].style.border = borderColor;
+
 
 function redBg() {
-    document.getElementsByTagName('body')[0].style.backgroundColor = 'red';
-    document.getElementsByTagName('body')[0].style.color = 'black';
-
-    document.getElementsByTagName('p')[0].style.border = 'solid 1px black';
-    document.getElementsByTagName('p')[1].style.border = 'solid 1px black';
-    document.getElementsByTagName('p')[2].style.border = 'solid 1px black';
-    document.getElementsByTagName('p')[3].style.border = 'solid 1px black';
 
     currentBg = 'red';
+    borderColor = 'solid 1px black';
+    fontColor = 'black';
 
-    database.ref().set({
-        currentBg: currentBg
+    document.getElementsByTagName('body')[0].style.backgroundColor = currentBg;
+    document.getElementsByTagName('body')[0].style.color = fontColor;
 
-    });
+    document.getElementsByTagName('p')[0].style.border = borderColor;
+    document.getElementsByTagName('p')[1].style.border = borderColor;
+    document.getElementsByTagName('p')[2].style.border = borderColor;
+    document.getElementsByTagName('p')[3].style.border = borderColor;
+
+
+
+    localStorage.setItem('bgColor', currentBg);
+    localStorage.setItem('borderColor', borderColor);
+    localStorage.setItem('fontColor', fontColor);
+    // database.ref().set({
+    //     currentBg: currentBg
+
+    // });
 }
 
 function blueBg() {
-    document.getElementsByTagName('body')[0].style.backgroundColor = 'blue';
-    document.getElementsByTagName('body')[0].style.color = 'white';
-
-    document.getElementsByTagName('p')[0].style.border = 'solid 1px white';
-    document.getElementsByTagName('p')[1].style.border = 'solid 1px white';
-    document.getElementsByTagName('p')[2].style.border = 'solid 1px white';
-    document.getElementsByTagName('p')[3].style.border = 'solid 1px white';
 
     currentBg = 'blue';
+    borderColor = 'solid 1px white';
+    fontColor = 'white';
 
-    database.ref().set({
-        currentBg: currentBg
+    document.getElementsByTagName('body')[0].style.backgroundColor = currentBg;
+    document.getElementsByTagName('body')[0].style.color = fontColor;
 
-    });
+    document.getElementsByTagName('p')[0].style.border = borderColor;
+    document.getElementsByTagName('p')[1].style.border = borderColor;
+    document.getElementsByTagName('p')[2].style.border = borderColor;
+    document.getElementsByTagName('p')[3].style.border = borderColor;
+
+
+
+    localStorage.setItem('bgColor', currentBg);
+    localStorage.setItem('borderColor', borderColor);
+    localStorage.setItem('fontColor', fontColor);
+
+    // database.ref().set({
+    //     currentBg: currentBg
+
+    // });
 }
 
 function blackBg() {
-    document.getElementsByTagName('body')[0].style.backgroundColor = 'black';
-    document.getElementsByTagName('body')[0].style.color = 'white';
-
-    document.getElementsByTagName('p')[0].style.border = 'solid 1px white';
-    document.getElementsByTagName('p')[1].style.border = 'solid 1px white';
-    document.getElementsByTagName('p')[2].style.border = 'solid 1px white';
-    document.getElementsByTagName('p')[3].style.border = 'solid 1px white';
 
     currentBg = 'black';
+    borderColor = 'solid 1px white';
+    fontColor = 'white';
 
-    database.ref().set({
-        currentBg: currentBg
+    document.getElementsByTagName('body')[0].style.backgroundColor = currentBg;
+    document.getElementsByTagName('body')[0].style.color = fontColor;
 
-    });
+    document.getElementsByTagName('p')[0].style.border = borderColor;
+    document.getElementsByTagName('p')[1].style.border = borderColor;
+    document.getElementsByTagName('p')[2].style.border = borderColor;
+    document.getElementsByTagName('p')[3].style.border = borderColor;
+
+
+
+    localStorage.setItem('bgColor', currentBg);
+    localStorage.setItem('borderColor', borderColor);
+    localStorage.setItem('fontColor', fontColor);
+
+    // database.ref().set({
+    //     currentBg: currentBg
+
+    // });
 }
 
 function yellowBg() {
-    document.getElementsByTagName('body')[0].style.backgroundColor = 'yellow';
-    document.getElementsByTagName('body')[0].style.color = 'black';
-
-    document.getElementsByTagName('p')[0].style.border = 'solid 1px black';
-    document.getElementsByTagName('p')[1].style.border = 'solid 1px black';
-    document.getElementsByTagName('p')[2].style.border = 'solid 1px black';
-    document.getElementsByTagName('p')[3].style.border = 'solid 1px black';
 
     currentBg = 'yellow';
+    borderColor = 'solid 1px black';
+    fontColor = 'black';
 
-    database.ref().set({
-        currentBg: currentBg
+    document.getElementsByTagName('body')[0].style.backgroundColor = currentBg;
+    document.getElementsByTagName('body')[0].style.color = fontColor;
 
-    });
+    document.getElementsByTagName('p')[0].style.border = borderColor;
+    document.getElementsByTagName('p')[1].style.border = borderColor;
+    document.getElementsByTagName('p')[2].style.border = borderColor;
+    document.getElementsByTagName('p')[3].style.border = borderColor;
+
+
+
+    localStorage.setItem('bgColor', currentBg);
+    localStorage.setItem('borderColor', borderColor);
+    localStorage.setItem('fontColor', fontColor);
+
+    // database.ref().set({
+    //     currentBg: currentBg
+
+    // });
 }
-
