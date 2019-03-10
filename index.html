@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./assets/css/style.css">
 
 
-    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script> -->
 
 </head>
 
@@ -19,15 +19,20 @@
 
 
 
-    <form>
+    <form id="startUserName">
+        <h1>Good Morning!</h1>
+
         <div class="userName">
             <label for="userNameInput">User Name</label>
             <input type="text" class="" id="name" placeholder="your name">
         </div>
-       
-        <input id="submitBtn" type="submit" value="Submit">
 
+        <input id="submitBtn" type="submit" value="Submit">
     </form>
+
+    <div id="nameDOMHolder">
+        <h1>Hi, <span id="nameDOM"></span> , Good Morning!</h1>
+    </div>
 
 
 
@@ -40,6 +45,7 @@
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- <script src="./assets/js/particles.js"></script> -->
     <script src="./assets/js/logic.js"></script>
 </body>
 
