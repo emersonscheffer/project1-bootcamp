@@ -9,6 +9,33 @@ body {
     background-size: 160%;
 }
 
+section {
+    display: grid;
+}
+.good-morning{
+    justify-self: center;
+    margin-top: 50px;
+}
+.clock {
+    justify-self: center;
+    text-align: center;
+    
+}
+.clock #current-time {
+    justify-self: center;
+    font-size: 185px;
+    letter-spacing: -0.08em;
+}
+
+.enterName {
+    justify-self: center;
+}
+
+.form {
+    justify-self: center;
+}
+
+
 h1 {
     margin: 20px;
     font-size: 40px;
