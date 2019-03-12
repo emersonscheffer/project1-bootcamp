@@ -33,8 +33,30 @@ section {
 
 .form {
     justify-self: center;
+    display: grid;
+
+}
+.userName {
+    display: grid;
 }
 
+input[type=text] {
+    width: 400px;
+    height: auto;
+    background: transparent;
+    border: none;
+    border-bottom: solid 2px #ffffff;
+    color: #ffffff;
+    font-size: 45px;
+    text-align: center;
+    font-weight: bold;
+}
+
+input[type=submit] {
+    justify-self: center;
+    text-align: center;
+    margin: 0 auto;
+}
 
 h1 {
     margin: 20px;
@@ -76,4 +98,9 @@ footer {
     justify-self: end;
     align-self: center;
     margin-right: 10px;
+}
+
+
+#settings {
+    display: none;
 }
