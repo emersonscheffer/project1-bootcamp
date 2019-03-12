@@ -5,8 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>v0.00.1</title>
+
+    <title>beta version 1</title>
+
+    <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/style.css">
+
 
 
     <!-- <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script> -->
@@ -14,36 +18,86 @@
 </head>
 
 <body>
-    <h1>Testing technology page</h1>
-    <h1>choose a bg color</h1>
 
 
+    <article>
+        <section id="firstScreen">
 
-    <form id="startUserName">
-        <h1>Good Morning!</h1>
+            <div class="good-morning" id="good-morning">
+                <h1>Good Morning</h1>
+            </div>
 
-        <div class="userName">
-            <label for="userNameInput">User Name</label>
-            <input type="text" class="" id="name" placeholder="your name">
+            <div class="clock" id="clock">
+                <h1 id="current-time"></h1>
+            </div>
+
+            <div class="enterName" id="enterName">
+                <h1>Enter your name</h1>
+            </div>
+
+            <div class="form" id="form">
+
+                <form class="userName">
+                    <input type="text" class="" id="name" placeholder="your name">
+                    <div></div>
+                    <input id="submitBtn" type="submit" value="Enter">
+                </form>
+                
+            </div>
+
+
+        </section>
+        <!-- firstScreen -->
+
+        <section id="secondScreen">
+
+            <article>
+                <div id="good-morning2">Good Morning</div>
+                <div id="name2">Name</div>
+                <div id="quote">Change your life today. Don't gamble on the future, act now, without delay</div>
+                
+
+                <div id="weather">Weather</div>
+
+                <div id="news">News</div>
+
+                <div id="map-traffic">Traffic</div>
+
+            </article>
+            <aside>
+                <div id="clock2">Clock</div>
+                <div id="to-do-list">item 1</div>
+            
+            </aside>
+
+        </section>
+        <!-- secondScreen -->
+
+
+        <section id="settings">
+            name:
+            Interests:
+            
+        </section>
+
+
+    </article>
+
+
+    <footer>
+        <div id="version">
+            <h3>© copyright - v 1.0 </h3>
         </div>
-
-        <input id="submitBtn" type="submit" value="Submit">
-    </form>
-
-    <div id="nameDOMHolder">
-        <h1>Hi, <span id="nameDOM"></span> , Good Morning!</h1>
-    </div>
-
-
-
-    <p onclick="redBg()" id="red">red</p>
-    <p onclick="blueBg()" id="blue">blue</p>
-    <p onclick="blackBg()" id="black">black</p>
-    <p onclick="yellowBg()" id="yellow">yellow</p>
+        <div id="gear-settings">
+            <a href="#">
+                <img onclick="" width="20px" src="./assets/imgs/gear-settings-white.png" alt="" srcset="">
+            </a>
+        </div>
+    </footer>
 
 
 
-
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- <script src="./assets/js/particles.js"></script> -->
     <script src="./assets/js/logic.js"></script>
