@@ -1,3 +1,36 @@
+var showFirstScreen;
+
+// store user name
+var userName;
+var storedName;
+
+$('#submitBtn').on('click', function () {
+    userName = $('#name').val().trim();
+    if(userName == ""){
+        ;// tell user to enter a value
+    } else {
+        localStorage.setItem('userName', userName);
+
+    }
+});
+
+storedName = localStorage.getItem('userName');
+
+//if user name set, hide first screen
+if (storedName === null) {
+    showFirstScreen = true;
+} else {
+    showFirstScreen = false; //change this to false
+}
+
+if(showFirstScreen){
+    $('#firstScreen').css('display', 'block');
+} else {
+    $('#firstScreen').css('display', 'none');
+}
+
+
+
 //clock
 
 var datetime = null,
@@ -13,9 +46,6 @@ $(document).ready(function () {
     update();
     setInterval(update, 1000);
 });
-
-console.log();
-
 
 
 
@@ -35,39 +65,39 @@ console.log();
 // var database = firebase.database();
 
 // Create a variable to easily track the current bg color.
-var currentBg = localStorage.getItem('bgColor');
+// var currentBg = localStorage.getItem('bgColor');
 
-var borderColor = localStorage.getItem('borderColor');
+// var borderColor = localStorage.getItem('borderColor');
 
-var fontColor = localStorage.getItem('fontColor');
+// var fontColor = localStorage.getItem('fontColor');
 
-var storedName = localStorage.getItem('userName');
+// var storedName = localStorage.getItem('userName');
 
-//updates the name on html
-$('#nameDOM').html(storedName);
-
-
-function updateName() {
-    $('#nameDOM').html(localStorage.getItem('userName'));
+// //updates the name on html
+// $('#nameDOM').html(storedName);
 
 
-}
+// function updateName() {
+//     $('#nameDOM').html(localStorage.getItem('userName'));
 
 
-//the input name will not show if a name is already assigned
-if (storedName === null) {
-    $('#startUserName').css('display', 'block');
-    $('#nameDOMHolder').css('display', 'none');
-} else {
-    $('#startUserName').css('display', 'none');
-    $('#nameDOMHolder').css('display', 'block');
-}
+// }
 
-$('#submitBtn').on('click', function () {
-    var userName = $('#name').val().trim();
-    localStorage.setItem('userName', userName);
-    updateName();
-});
+
+// //the input name will not show if a name is already assigned
+// if (storedName === null) {
+//     $('#startUserName').css('display', 'block');
+//     $('#nameDOMHolder').css('display', 'none');
+// } else {
+//     $('#startUserName').css('display', 'none');
+//     $('#nameDOMHolder').css('display', 'block');
+// }
+
+// $('#submitBtn').on('click', function () {
+//     var userName = $('#name').val().trim();
+//     localStorage.setItem('userName', userName);
+//     updateName();
+// });
 
 
 //------------------------------------------------------------------
@@ -198,28 +228,28 @@ $('#submitBtn').on('click', function () {
 // }
 
 
-var suki = {
-    todo: {
-        item1: "read a book"
-    }
+// var suki = {
+//     todo: {
+//         item1: "read a book"
+//     }
 
 
-};
+// };
 
-suki.name = "Suki";
-suki.age = 200;
+// suki.name = "Suki";
+// suki.age = 200;
 
 
-localStorage.setItem('userName2', JSON.stringify(suki));
+// localStorage.setItem('userName2', JSON.stringify(suki));
 
-var sukiInfo = JSON.parse(localStorage.getItem('userName2'));
+// var sukiInfo = JSON.parse(localStorage.getItem('userName2'));
 
-var userArray = Object.values(sukiInfo);
-console.log(Object.values(sukiInfo));
-console.log(sukiInfo);
+// var userArray = Object.values(sukiInfo);
+// console.log(Object.values(sukiInfo));
+// console.log(sukiInfo);
 
-console.log(sukiInfo.name);
-console.log(userArray[0].item1 + " from array ");
+// console.log(sukiInfo.name);
+// console.log(userArray[0].item1 + " from array ");
 
 
 
