@@ -3,24 +3,112 @@ body {
     text-shadow: 0px 0px 2px #000000;
     font-family: Helvetica, sans-serif;
     font-weight: bold;
-    background-image: url("../imgs/sunset.jpg");
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: 160%;
+
+    background: url(../imgs/sunset.jpg) no-repeat center bottom fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 section {
     display: grid;
+    background-color: #ffffff6c;
+    grid-template-columns: repeat(10, 1fr);
+    grid-gap: 10px;
 }
-.good-morning{
+
+#secondScreenArticle {
+    grid-column: 1/8;
+    background-color: rgba(206, 233, 142, 0.226);
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+}
+
+aside {
+    grid-column: 8/11;
+    background-color: rgba(0, 255, 55, 0.226);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+#good-morning2 {
+    margin: 10px;
+    font-size: 45px;
+    grid-column: 1/11;
+    justify-self: start;
+    background-color: #eb64646e;
+}
+
+#name2 {
+    margin: 10px;
+    font-size: 40px;
+    grid-column: 1/11;
+}
+
+#quote {
+    margin: 10px;
+    background-color: rgba(187, 121, 34, 0.308);
+    grid-column: 3/11;
+    font-size: 35px;
+    text-align: right;
+}
+
+
+#weather {
+    margin: 10px;
+    background-color: rgba(57, 138, 118, 0.308);
+    grid-column: 5/11;
+}
+
+#news {
+    margin: 10px;
+    background-color: rgba(57, 79, 138, 0.308);
+    grid-column: 5/11;
+}
+
+#map-traffic {
+    margin: 10px;
+    background-color: rgba(57, 79, 138, 0.308);
+    grid-column: 1/5;
+    height: 300px;
+}
+
+/* ////////////////////////////////////////////////////// */
+
+
+#clock2 {
+    margin: 10px;
+    background-color: rgba(124, 20, 110, 0.308);
+    grid-column: 1/5;
+    justify-self: end;
+    font-size: 100px;
+}
+
+#to-do-list{
+    margin: 10px;
+    background-color: rgba(20, 124, 89, 0.308);
+    grid-column: 1/5;
+    justify-self: end;
+    font-size: 50px;
+}
+
+
+
+
+
+
+.good-morning {
     justify-self: center;
     margin-top: 50px;
 }
+
 .clock {
     justify-self: center;
     text-align: center;
-    
+
 }
+
 .clock #current-time {
     justify-self: center;
     font-size: 185px;
@@ -36,6 +124,7 @@ section {
     display: grid;
 
 }
+
 .userName {
     display: grid;
 }
@@ -74,6 +163,9 @@ p {
     border-radius: 10px;
     margin-left: 15px;
 }
+
+
+
 
 
 footer {
