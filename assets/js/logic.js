@@ -4,6 +4,8 @@ var showFirstScreen;
 var userName;
 var storedName;
 
+
+
 $('#submitBtn').on('click', function () {
     userName = $('#name').val().trim();
     if(userName == ""){
@@ -14,7 +16,13 @@ $('#submitBtn').on('click', function () {
     }
 });
 
+//retrieving name
 storedName = localStorage.getItem('userName');
+
+// name on second screen
+$('#name2').html(storedName);
+
+
 
 //if user name set, hide first screen
 if (storedName === null) {
@@ -47,6 +55,11 @@ $(document).ready(function () {
     setInterval(update, 1000);
 });
 
+$(document).ready(function () {
+    datetime = $('#clock2')
+    update();
+    setInterval(update, 1000);
+});
 
 
 
