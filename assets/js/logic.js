@@ -76,7 +76,7 @@ function redBg() {
 
     currentBg = 'red';
     borderColor = 'solid 1px black';
-    fontColor = 'black';
+    fontColor = 'white';
 
     document.getElementsByTagName('body')[0].style.backgroundColor = currentBg;
     document.getElementsByTagName('body')[0].style.color = fontColor;
@@ -153,7 +153,7 @@ function yellowBg() {
 
     currentBg = 'yellow';
     borderColor = 'solid 1px black';
-    fontColor = 'black';
+    fontColor = 'white';
 
     document.getElementsByTagName('body')[0].style.backgroundColor = currentBg;
     document.getElementsByTagName('body')[0].style.color = fontColor;
@@ -174,3 +174,32 @@ function yellowBg() {
 
     // });
 }
+
+
+var suki = {
+   todo : {
+    item1: "read a book"
+   } 
+       
+   
+};
+
+suki.name = "Suki";
+suki.age = 200;
+
+
+localStorage.setItem('userName2', JSON.stringify(suki));
+
+var sukiInfo = JSON.parse(localStorage.getItem('userName2'));
+
+var userArray = Object.values(sukiInfo);
+console.log(Object.values(sukiInfo));
+console.log(sukiInfo);
+
+console.log(sukiInfo.name);
+console.log(userArray[0].item1 + " from array ");
+
+
+
+
+//var user = JSON.parse(localStorage.getItem('user')); If we need to delete all entries of the store we can simply do:
