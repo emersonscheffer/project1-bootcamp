@@ -67,6 +67,17 @@ aside {
     grid-column: 5/11;
 }
 
+.newsArticle {
+    margin-bottom: 10px;
+    border: solid 1px #b1b1b1;
+    border-radius: 10px;
+}
+
+.newsArticle img {
+    float: left;
+    margin: 10px;
+}
+
 #map-traffic {
     margin: 10px;
     background-color: rgba(57, 79, 138, 0.308);
