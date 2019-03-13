@@ -1,28 +1,15 @@
-$(document).ready(function () {
-
-    let name = document.getElementById("name").textContent;
-
-    let temp = document.getElementById("temp").textContent;
-
-    console.log(name);
-
-    $("#start").on("click", function () {
-
-        responsiveVoice.speak(name, "UK English Female");
-        responsiveVoice.speak(temp, "UK English Female");
-    });
-    if (responsiveVoice.isPlaying()) {
-        console.log("I hope you are listening");
-    }
-
-
-    $("#stop").on("click", function () {
-        responsiveVoice.cancel();
-    });
-
-});
+//Example Element grab
+let name = document.getElementById("name");
 
 
 
+//Function takes an element, saves its text content to a variable. Then reads the variable string and the console.logs
+function readElement(element) {
+    let voiceScript = element.textContent;
+    responsiveVoice.speak(voiceScript, "US English Female");
+  //  console.log("I just read " + voiceScript + "for you!");
+}
+
+readElement(name)
 
 //API documentation  https://responsivevoice.org/api/
