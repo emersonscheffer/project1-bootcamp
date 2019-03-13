@@ -8,9 +8,10 @@
 
     <title>beta version 1</title>
 
+    <link rel="shortcut icon" href="./assets/imgs/favicon.png" type="image/x-icon">
+
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/style.css">
-
 
 
     <!-- <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script> -->
@@ -52,6 +53,11 @@
         <section id="secondScreen">
 
             <article id="secondScreenArticle">
+                <div id="logo">
+
+                    <img src="./assets/imgs/logoCheckMark.svg" alt="">
+
+                    Jump Start</div>
                 <div id="good-morning2">Good Morning</div>
                 <div id="name2"></div>
                 <div id="quote">"Change your life today. Don't gamble on the future, act now, without delay"</div>
@@ -67,7 +73,17 @@
             </article>
             <aside>
                 <div id="clock2">Clock</div>
-                <div id="to-do-list">item 1</div>
+                <div id="to-do-list">
+
+                    <div id="current-list"></div>
+
+                    <form class="todo-form">
+                        <input type="text" id="item-to-be-added" placeholder="todo item">
+                        <input id="submit-btn-add" type="submit" value="Enter">
+                    </form>
+
+
+                </div>
 
             </aside>
 
@@ -100,6 +116,8 @@
 
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script src="./assets/js/logos.js"></script>
     <!-- <script src="./assets/js/particles.js"></script> -->
     <script src="./assets/js/news.js"></script>
     <script src="./assets/js/todo.js"></script>

@@ -12,7 +12,6 @@ $('#submitBtn').on('click', function () {
         ;// tell user to enter a value
     } else {
         localStorage.setItem('userName', userName);
-
     }
 });
 

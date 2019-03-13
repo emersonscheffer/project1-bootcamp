@@ -13,16 +13,27 @@ body {
 
 section {
     display: grid;
-    background-color: #ffffff6c;
     grid-template-columns: repeat(10, 1fr);
     grid-gap: 10px;
 }
 
 #secondScreenArticle {
     grid-column: 1/8;
-    background-color: rgba(206, 233, 142, 0.226);
     display: grid;
     grid-template-columns: repeat(10, 1fr);
+}
+
+#logo {
+    width: 50%;
+    margin: 10px;
+    margin-left: 20px;
+    font-size: 30px;
+    grid-column: 1/11;
+    justify-self: start;
+    border-bottom: solid 1px #000000;
+}
+#logo img {
+    width: 30px;
 }
 
 aside {
@@ -30,6 +41,7 @@ aside {
     background-color: rgba(0, 255, 55, 0.226);
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: minmax(100px, auto);
 }
 
 #good-morning2 {
@@ -37,7 +49,6 @@ aside {
     font-size: 45px;
     grid-column: 1/11;
     justify-self: start;
-    background-color: #eb64646e;
 }
 
 #name2 {
@@ -63,20 +74,35 @@ aside {
 
 #news {
     margin: 10px;
-    background-color: rgba(57, 79, 138, 0.308);
     grid-column: 5/11;
+    
 }
 
 .newsArticle {
     margin-bottom: 10px;
-    border: solid 1px #b1b1b1;
     border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    grid-gap: 5px;
+    grid-template-rows: minmax(50px, auto);
 }
 
-.newsArticle img {
-    float: left;
-    margin: 10px;
+.newsImage{
+    grid-column: 1/2; 
+    grid-row: 1/3;
+    align-self: center;
 }
+
+.newsTitle{
+    font-size: 18px;
+    grid-column: 2/5; 
+}
+.newsDescription {
+    font-size: 16px;
+    font-weight: normal;
+    grid-column: 1/5; 
+}
+
 
 #map-traffic {
     margin: 10px;
@@ -90,10 +116,12 @@ aside {
 
 #clock2 {
     margin: 10px;
-    background-color: rgba(124, 20, 110, 0.308);
+    background-color: rgba(241, 114, 225, 0.308);
     grid-column: 1/5;
-    justify-self: end;
+    justify-self: center;
+    align-self: center;
     font-size: 100px;
+    grid-row: 1/2;
 }
 
 #to-do-list{
@@ -102,8 +130,14 @@ aside {
     grid-column: 1/5;
     justify-self: end;
     font-size: 50px;
+    grid-row: 2/11;
+    font-size: 24px;
 }
 
+input[type=submit] {
+    padding: 16px 32px;
+    background-image: url(../imgs/logoCheckMark.svg);
+}
 
 
 
@@ -152,6 +186,11 @@ input[type=text] {
     font-weight: bold;
 }
 
+#item-to-be-added {
+    width: 200px;
+}
+
+
 input[type=submit] {
     justify-self: center;
     text-align: center;
@@ -166,17 +205,6 @@ h1 {
 h3 {
     font-size: 10px;
 }
-
-p {
-    padding: 10px;
-    border: solid 1px #000000;
-    float: left;
-    border-radius: 10px;
-    margin-left: 15px;
-}
-
-
-
 
 
 footer {
