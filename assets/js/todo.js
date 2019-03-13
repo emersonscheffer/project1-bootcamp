@@ -10,7 +10,7 @@ function itemCreator(item) {
 
     var divCheck = $('<div id="del" class="check-box">');
 
-    divCheck.html('<img width="30px" src="./assets/imgs/logoNoCheckMark.svg">');
+    divCheck.html('<img width="30px" src="./assets/imgs/squareChecked.svg">');
 
     var itemBtn = $('<div class"word-btn">' + item + '</div>');
 
