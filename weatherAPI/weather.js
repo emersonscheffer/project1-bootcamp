@@ -26,11 +26,10 @@ $.ajax({
   .then(function (response) {
 
     // Log the queryURL
-    console.log(queryURL);
+    // console.log(queryURL);
 
     // Log the resulting object
-    console.log(response);
-
+    // console.log(response);
 
     //the content we want documented onto the html:
 
@@ -38,6 +37,8 @@ $.ajax({
     $("#temp").text("Temperature (F) " + response.main.temp);
     $("#wind").text("Wind Speed: " + response.wind.speed);
     $("#humidity").text("Humidity: " + response.main.humidity);
+    $("#weather-sky").text("Weather: " + response.weather[0].description);
+
     //sunrise unix seconds converted to timestamp
     var riseTimeStamp = moment.unix(response.sys.sunrise).format("hh:mm");
     $("#sunrise").text("Sunrise: " + riseTimeStamp);
@@ -48,6 +49,7 @@ $.ajax({
     console.log("Wind Speed: " + response.wind.speed);
     console.log("Humidity " + response.main.humidity);
     console.log("Sunrise: " + response.sys.sunrise);
+    console.log("weather: " + response.weather[0].description);
     console.log(riseTimeStamp)
 
   });
