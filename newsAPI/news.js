@@ -5,10 +5,10 @@ let size = 3;
 let queryNewsURL = "https://newsapi.org/v2/top-headlines?country=us&category=" + category + "&pageSize=" + size + "&apiKey=1cd64ef816394b76bdea16629047d2f5";
 // Run AJAX call to get top news stories
 $.ajax({
-url: queryNewsURL,
-method: "GET"
-}).then(function(response) {
-    for (let i = 0; i < size ; i++) {
+    url: queryNewsURL,
+    method: "GET"
+}).then(function (response) {
+    for (let i = 0; i < size; i++) {
         let title = response.articles[i].title;
         let picture = response.articles[i].urlToImage;
         let newsURL = response.articles[i].url;

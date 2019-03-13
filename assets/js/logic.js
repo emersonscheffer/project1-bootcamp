@@ -61,6 +61,21 @@ $(document).ready(function () {
 });
 
 
+//background changing
+var number = Math.floor(Math.random() * 100);
+
+console.log(number);
+if(number > 9){
+    $('body').css('backgroundImage', 'url(./assets/imgs/0' + number + '.jpg');
+
+} else if (number === 0){
+    number = 100;
+    $('body').css('backgroundImage', 'url(./assets/imgs/' + number + '.jpg');
+
+} else if(number < 10){
+    $('body').css('backgroundImage', 'url(./assets/imgs/00' + number + '.jpg');
+
+} 
 
 //   // Initialize Firebase
 //   var config = {
