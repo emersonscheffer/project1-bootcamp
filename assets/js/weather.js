@@ -1,9 +1,9 @@
 console.log("connected to weather.js")
 
-var sunriseTime = moment.unix(1552400623) //sunrise unix seconds converted to timestamp
+//var sunriseTime = moment.unix(1552400623) //sunrise unix seconds converted to timestamp
 //var day = moment.unix(1318781876); //seconds
 // and then:
-console.log(sunriseTime.format('dddd MMMM Do YYYY, h:mm:ss a'));
+//console.log(sunriseTime.format('dddd MMMM Do YYYY, h:mm:ss a'));
 
 
 var APIKey = "c853a4cc4fc8c7501716acbd26d1b50e";
