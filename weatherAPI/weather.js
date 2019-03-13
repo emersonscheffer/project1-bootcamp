@@ -1,9 +1,10 @@
 console.log("connected to weather.js")
+//console.log(moment().format("DD/MM/YY hh:mm A"));
 
-//var sunriseTime = moment.unix(1552400623) //sunrise unix seconds converted to timestamp
-//var day = moment.unix(1318781876); //seconds
+var sunriseTime = moment.unix(1552400623) 
+//var day = moment.unix(response.sys.sunrise).format("hh:mm"); //seconds
 // and then:
-//console.log(sunriseTime.format('dddd MMMM Do YYYY, h:mm:ss a'));
+//console.log(day);
 
 
 var APIKey = "c853a4cc4fc8c7501716acbd26d1b50e";
@@ -11,8 +12,6 @@ let userCity = "Berkeley"; //"userCityInputVariable"
 let userCountryCode = "US"; //"userCountryCodeVariable"
 
 // querying the weather database using a variable for input of user location
-// var queryURL = "https://api.openweathermap.org/data/2.5/weather?" +
-//   userCity + "," + userCountryCode + APIKey;
 
 var queryURL = "https://api.openweathermap.org/data/2.5/weather?" +
   "q=" + userCity + "," + userCountryCode + "&units=imperial&appid=" + APIKey;
@@ -39,14 +38,17 @@ $.ajax({
     $("#temp").text("Temperature (F) " + response.main.temp);
     $("#wind").text("Wind Speed: " + response.wind.speed);
     $("#humidity").text("Humidity: " + response.main.humidity);
-    $("#sunrise").text("Sunrise: " + response.sys.sunrise);
+    //sunrise unix seconds converted to timestamp
+    var riseTimeStamp = moment.unix(response.sys.sunrise).format("hh:mm");
+    $("#sunrise").text("Sunrise: " + riseTimeStamp);
 
     // Log the data in the console as well
-    console.log("Location " + response.name + response.sys.country);
+    console.log("Location " + response.name + ", " + response.sys.country);
     console.log("Temperature (F): " + response.main.temp);
     console.log("Wind Speed: " + response.wind.speed);
     console.log("Humidity " + response.main.humidity);
     console.log("Sunrise: " + response.sys.sunrise);
+    console.log(riseTimeStamp)
 
   });
 

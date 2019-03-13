@@ -1,0 +1,5 @@
+a {
+    text-decoration: none;
+    /* Delete the -> color: black -> when transfering over to the main file */
+    color: black;
+}

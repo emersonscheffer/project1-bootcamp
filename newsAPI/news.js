@@ -24,10 +24,10 @@ $.ajax({
             "data-description": description
         });
 
-
-        article.append('<h1 class="newsTitle">' + title + '</h1>');
-        article.append('<img class="newsImage" width="95%" src="' + picture + ' ">');
-        article.append('<h3 class="newsDescription">' + description + '</h3>');
+        // WE NEED STYLE SHEETS on all <a> WITH -> text-decoration: none;
+        article.append('<a href="' + newsURL + '" target="_blank" ><h1 class="newsTitle">' + title + '</h1></a>');
+        article.append('<a href="' + newsURL + '" target="_blank" ><img class="newsImage" width="95%" src="' + picture + '"></a>');
+        article.append('<a href="' + newsURL + '" target="_blank" ><h3 class="newsDescription">' + description + '</h3></a>');
 
 
         $("#news-view").append(article);
