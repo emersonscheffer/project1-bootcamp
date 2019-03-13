@@ -122,6 +122,13 @@ aside {
 }
 
 
+a {
+    text-decoration: none;
+    /* Delete the -> color: black -> when transfering over to the main file */
+    color: white;
+}
+
+
 #news {
     margin: 10px;
     grid-column: 5/11;
@@ -131,8 +138,8 @@ aside {
 .newsArticle {
     margin-bottom: 20px;
     border-radius: 10px;
-border-bottom: solid 1px #ffffff;
-padding-bottom: 20px;
+    border-bottom: solid 1px #ffffff;
+    padding-bottom: 17px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 5px;
@@ -143,17 +150,22 @@ padding-bottom: 20px;
     grid-column: 1/2;
     grid-row: 1/3;
     align-self: center;
+    /* border: solid 2px #ffffff; */
 }
 
 .newsTitle {
     font-size: 18px;
     grid-column: 2/5;
+    margin-top: 10px;
+    align-self: center;
+    
 }
 
 .newsDescription {
     font-size: 16px;
     font-weight: normal;
     grid-column: 1/5;
+    
 }
 
 

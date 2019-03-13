@@ -15,7 +15,7 @@ $.ajax({
         let description = response.articles[i].description;
 
         // Create HTML divs/img tags and dynamically fill "box" [also have to claim area for "box" on HTML]
-        const article = $("<div>").addClass("article-" + (i + 1));
+        const article = $("<div>").addClass("newsArticle article-" + (i + 1));
         console.log(title);
         article.attr({
             src: newsURL,
@@ -25,11 +25,11 @@ $.ajax({
         });
 
         // WE NEED STYLE SHEETS on all <a> WITH -> text-decoration: none;
-        article.append('<a href="' + newsURL + '" target="_blank" ><h1 class="newsTitle">' + title + '</h1></a>');
-        article.append('<a href="' + newsURL + '" target="_blank" ><img class="newsImage" width="95%" src="' + picture + '"></a>');
-        article.append('<a href="' + newsURL + '" target="_blank" ><h3 class="newsDescription">' + description + '</h3></a>');
+        article.append('<a class="newsTitle" href="' + newsURL + '" target="_blank" ><h1 >' + title + '</h1></a>');
+        article.append('<a class="newsImage"  href="' + newsURL + '" target="_blank" ><img width="95%" src="' + picture + '"></a>');
+        article.append('<a class="newsDescription" href="' + newsURL + '" target="_blank" ><h3 >' + description + '</h3></a>');
 
 
-        $("#news-view").append(article);
+        $("#news").append(article);
     }
 });
