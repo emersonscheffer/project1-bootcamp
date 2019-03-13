@@ -5,4 +5,5 @@ url: queryQuoteURL,
 method: "GET"
 }).then(function(response) {
     console.log(response[0]);
+    $('#quote').html(response[0]);
 });
