@@ -16,7 +16,7 @@ $.ajax({
 
         // Create HTML divs/img tags and dynamically fill "box" [also have to claim area for "box" on HTML]
         const article = $("<div>").addClass("newsArticle article-" + (i + 1));
-        console.log(title);
+        //console.log(title);
         article.attr({
             src: newsURL,
             "data-title": title,

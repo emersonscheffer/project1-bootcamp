@@ -1,4 +1,4 @@
-console.log("connected to weather.js")
+// console.log("connected to weather.js")
 //console.log(moment().format("DD/MM/YY hh:mm A"));
 
 var sunriseTime = moment.unix(1552400623) 
@@ -44,13 +44,13 @@ $.ajax({
     $("#sunrise").text("Sunrise: " + riseTimeStamp);
 
     // Log the data in the console as well
-    console.log("Location " + response.name + ", " + response.sys.country);
-    console.log("Temperature (F): " + response.main.temp);
-    console.log("Wind Speed: " + response.wind.speed);
-    console.log("Humidity " + response.main.humidity);
-    console.log("Sunrise: " + response.sys.sunrise);
-    console.log("weather: " + response.weather[0].description);
-    console.log(riseTimeStamp)
+    // console.log("Location " + response.name + ", " + response.sys.country);
+    // console.log("Temperature (F): " + response.main.temp);
+    // console.log("Wind Speed: " + response.wind.speed);
+    // console.log("Humidity " + response.main.humidity);
+    // console.log("Sunrise: " + response.sys.sunrise);
+    // console.log("weather: " + response.weather[0].description);
+    // console.log(riseTimeStamp)
 
   });
 

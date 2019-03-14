@@ -11,6 +11,7 @@
     <link rel="shortcut icon" href="./assets/imgs/favicon.png" type="image/x-icon">
 
     <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./routeAPI/maps.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou" rel="stylesheet">
 
@@ -53,13 +54,16 @@
         <section id="secondScreen">
 
             <article id="secondScreenArticle">
-                <div id="logo">
+                <div id="logoDiv">
 
-                    <img src="./assets/imgs/logoCheckMark.svg" alt="">
+                    <img src="./assets/imgs/logo-final.svg" alt="">
 
-                    Jump Start</div>
-                <div id="good-morning2">Good Morning</div>
-                <div id="name2"></div>
+                    <h1>Jump Start</h1>
+                    <div id="good-morning2">Good Morning</div>
+                    <div id="name2"></div>
+                </div>
+
+                
                 <div id="quote"></div>
 
 
@@ -75,7 +79,60 @@
                 <div id="news">
                 </div>
 
-                <div id="map-traffic">Traffic</div>
+                <div id="map-traffic">
+
+
+
+
+
+
+
+
+
+                    <div id="map"></div>
+                    <div id="right-panel">
+                        <div>
+                            <b>Start:</b>
+                            <input id="start">
+
+                            <div id="unimportant">
+                                <br>
+                                <b>Waypoints:</b> <br>
+                                <i>(Ctrl+Click or Cmd+Click for multiple selection)</i> <br>
+                                <select multiple id="waypoints">
+                                    <option value="montreal, quebec">Montreal, QBC</option>
+                                    <option value="toronto, ont">Toronto, ONT</option>
+                                    <option value="chicago, il">Chicago</option>
+                                    <option value="winnipeg, mb">Winnipeg</option>
+                                    <option value="fargo, nd">Fargo</option>
+                                    <option value="calgary, ab">Calgary</option>
+                                    <option value="spokane, wa">Spokane</option>
+                                </select>
+                            </div>
+
+                            <br>
+                            <b>End:</b>
+                            <input id="end">
+                            <br>
+                            <input type="submit" id="submit">
+                        </div>
+                        <!-- End of inside of right panel -->
+                        <div id="directions-panel"></div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
 
             </article>
             <aside>
@@ -124,6 +181,12 @@
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzM__JkWwv3yQDfugZDCdqfY21F48PtyA&callback=initMap">
+    </script>
+
+
+    <script src="./routeAPI/maps.js"></script>
     <script src="./weatherAPI/weather.js"></script>
     <script src="./quoteAPI/quote.js"></script>
     <script src="./assets/js/logos.js"></script>
