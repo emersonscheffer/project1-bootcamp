@@ -1,6 +1,6 @@
 # project1-bootcamp
 
+#Jump Start
+##The morning app that makes your day more productive. 
 
-This is the jump start 
-
-paul joined the group
+#Monday's demo is with Suki
