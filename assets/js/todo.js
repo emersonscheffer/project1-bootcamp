@@ -184,7 +184,7 @@ function itemCreator(item) {
 
     var divCheck = $('<div id="del" class="check-box">');
 
-    divCheck.html('<img width="30px" src="./assets/imgs/squareChecked.svg">');
+    divCheck.html('<img width="30px" src="./assets/imgs/square.svg">');
 
     var itemBtn = $('<div class"word-btn">' + item + '</div>');
 
@@ -225,7 +225,11 @@ console.log(mainServerArray);
 $(document).on("click", "#del", removeTask);
 
 function removeTask() {
+
     $(this).parent("div").remove();
+
+
+
     //reset the user todo
     delete user.todo;
     user = {
@@ -245,7 +249,6 @@ function removeTask() {
         }
     }
     deleteFromArray(mainServerArray);
-    console.log("#@#@#@#@#@#@# #@#@");
     console.log(mainServerArray);
     //update user object
     function objUpdating() {
@@ -259,50 +262,3 @@ function removeTask() {
     localStorage.setItem("currentUser", JSON.stringify(user));
 
 }
-
-
-
-
-
-
-
-
-
-
-// $(document).on("click", "#del", removeTask);
-
-// function removeTask() {
-//     $(this).parent("div").remove();
-//     var itemWord = $(this).parent("div").children()[1].textContent;
-
-//     function deleteFromArray() {
-//         for (var i in storedTodoListArray) {
-//             if (itemWord === storedTodoListArray[i]) {
-//                 storedTodoListArray.splice(i, 1);
-
-//             }
-//         }
-//     }
-//     deleteFromArray();
-//     console.log(storedTodoListArray);
-//     todoListArray = [];
-//     updatingToDoListFromStored();
-//     addToServerArray();
-
-
-// }
-
-
-
-
-
-
-
-
-
-function loadCurrentListFromServer() {
-    // createListDOM();
-    // gettingArrayValuesFromServer()
-    // // creatingItemToDisplay();
-}
-loadCurrentListFromServer();
