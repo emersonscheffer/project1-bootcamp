@@ -171,7 +171,7 @@ $(document).ready(function () {
 // ____________________________
 
 var updateBackground = function () {
-    number = Math.floor(Math.random() * 100);
+    number = Math.floor(Math.random() * 30);
     if (number > 9) {
         $('body').css('backgroundImage', 'url(./assets/imgs/0' + number + '.jpg');
     } else if (number === 0) {
