@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./routeAPI/maps.css">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/media.css">
     <link href="https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou" rel="stylesheet">
 
     <!-- <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script> -->
@@ -49,21 +50,18 @@
 
 
         </section>
-        <!-- firstScreen ends -->
+        <!-- firstScreen -->
 
         <section id="secondScreen">
 
             <article id="secondScreenArticle">
-                <div id="logoDiv">
+                <div id="logo">
 
-                    <img src="./assets/imgs/logo-final.svg" alt="">
+                    <img src="./assets/imgs/logoCheckMark.svg" alt="">
 
-                    <h1>Jump Start</h1>
-                    <div id="good-morning2">Good Morning</div>
-                    <div id="name2"></div>
-                </div>
-
-                
+                    Jump Start</div>
+                <div id="good-morning2">Good Morning</div>
+                <div id="name2"></div>
                 <div id="quote"></div>
 
 
@@ -76,49 +74,46 @@
                     <div id="humidity"></div>
                 </div>
 
-                <div id="news">
+                <div id="news">News
                 </div>
 
-                <div id="map-traffic">
+                <div id="map-traffic">Traffic</div>
 
 
 
 
 
 
+                <div id="map"></div>
+                <div id="right-panel">
+                    <div>
+                        <b>Start:</b>
+                        <input id="start">
 
-
-
-                    <div id="map"></div>
-                    <div id="right-panel">
-                        <div>
-                            <b>Start:</b>
-                            <input id="start">
-
-                            <div id="unimportant">
-                                <br>
-                                <b>Waypoints:</b> <br>
-                                <i>(Ctrl+Click or Cmd+Click for multiple selection)</i> <br>
-                                <select multiple id="waypoints">
-                                    <option value="montreal, quebec">Montreal, QBC</option>
-                                    <option value="toronto, ont">Toronto, ONT</option>
-                                    <option value="chicago, il">Chicago</option>
-                                    <option value="winnipeg, mb">Winnipeg</option>
-                                    <option value="fargo, nd">Fargo</option>
-                                    <option value="calgary, ab">Calgary</option>
-                                    <option value="spokane, wa">Spokane</option>
-                                </select>
-                            </div>
-
+                        <div id="unimportant">
                             <br>
-                            <b>End:</b>
-                            <input id="end">
-                            <br>
-                            <input type="submit" id="submit">
+                            <b>Waypoints:</b> <br>
+                            <i>(Ctrl+Click or Cmd+Click for multiple selection)</i> <br>
+                            <select multiple id="waypoints">
+                                <option value="montreal, quebec">Montreal, QBC</option>
+                                <option value="toronto, ont">Toronto, ONT</option>
+                                <option value="chicago, il">Chicago</option>
+                                <option value="winnipeg, mb">Winnipeg</option>
+                                <option value="fargo, nd">Fargo</option>
+                                <option value="calgary, ab">Calgary</option>
+                                <option value="spokane, wa">Spokane</option>
+                            </select>
                         </div>
-                        <!-- End of inside of right panel -->
-                        <div id="directions-panel"></div>
+
+                        <br>
+                        <b>End:</b>
+                        <input id="end">
+                        <br>
+                        <input type="submit" id="submit">
                     </div>
+                    <!-- End of inside of right panel -->
+                    <div id="directions-panel"></div>
+                </div>
 
 
 
