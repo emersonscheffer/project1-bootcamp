@@ -6,14 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>beta version 1</title>
+    <title>(: Jump Start :)</title>
 
     <link rel="shortcut icon" href="./assets/imgs/favicon.png" type="image/x-icon">
 
     <link rel="stylesheet" href="./assets/css/reset.css">
+
     <link rel="stylesheet" href="./routeAPI/maps.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./assets/css/media.css">
+    <link rel="stylesheet" href="./assets/css/newStyles.css">
+    <!-- <link rel="stylesheet" href="./assets/css/style.css"> -->
+    <!-- <link rel="stylesheet" href="./assets/css/media.css"> -->
     <link href="https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou" rel="stylesheet">
 
     <!-- <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script> -->
@@ -26,40 +28,46 @@
     <article>
         <section id="firstScreen">
 
-            <div class="good-morning" id="good-morning">
+            <div id="first-good-morning">
                 <h1>Good Morning</h1>
             </div>
 
-            <div class="clock" id="clock">
+            <div class="clock" id="first-clock">
                 <h1 id="current-time"></h1>
             </div>
 
-            <div class="enterName" id="enterName">
+            <div id="first-enter-name">
                 <h1>Enter your name</h1>
             </div>
 
-            <div class="form" id="form">
+            <div id="first-form">
 
-                <form class="userName">
-                    <input type="text" class="" id="name" placeholder="your name">
+                <form id="first-user-name">
+                    <input type="text" id="first-name" placeholder="your name">
                     <div></div>
-                    <input id="submitBtn" type="submit" value="Enter">
+                    <input id="first-submit-btn" type="submit" value="Enter">
+
+                    <div id="first-logo">
+                        <img src="./assets/imgs/logo-final.svg" alt="">
+                    </div>
                 </form>
 
             </div>
 
 
+
+
         </section>
         <!-- firstScreen -->
 
-        <section id="secondScreen">
+        <section id="secondScreenMain">
 
             <article id="secondScreenArticle">
-                <div id="logo">
+                <div id="logoDiv">
 
-                    <img src="./assets/imgs/logoCheckMark.svg" alt="">
-
-                    Jump Start</div>
+                    <img src="./assets/imgs/logo-final.svg" alt="">
+                    <h1>Jump Start</h1>
+                </div>
                 <div id="good-morning2">Good Morning</div>
                 <div id="name2"></div>
                 <div id="quote"></div>
@@ -77,43 +85,14 @@
                 <div id="news">News
                 </div>
 
-                <div id="map-traffic">Traffic</div>
 
 
 
 
 
 
-                <div id="map"></div>
-                <div id="right-panel">
-                    <div>
-                        <b>Start:</b>
-                        <input id="start">
 
-                        <div id="unimportant">
-                            <br>
-                            <b>Waypoints:</b> <br>
-                            <i>(Ctrl+Click or Cmd+Click for multiple selection)</i> <br>
-                            <select multiple id="waypoints">
-                                <option value="montreal, quebec">Montreal, QBC</option>
-                                <option value="toronto, ont">Toronto, ONT</option>
-                                <option value="chicago, il">Chicago</option>
-                                <option value="winnipeg, mb">Winnipeg</option>
-                                <option value="fargo, nd">Fargo</option>
-                                <option value="calgary, ab">Calgary</option>
-                                <option value="spokane, wa">Spokane</option>
-                            </select>
-                        </div>
 
-                        <br>
-                        <b>End:</b>
-                        <input id="end">
-                        <br>
-                        <input type="submit" id="submit">
-                    </div>
-                    <!-- End of inside of right panel -->
-                    <div id="directions-panel"></div>
-                </div>
 
 
 
@@ -144,13 +123,15 @@
 
                 </div>
 
+                
+
             </aside>
 
         </section>
         <!-- secondScreen ends -->
 
 
-        <section id="settings">
+        <section id="settingsScreen">
             name:
             Interests:
 
@@ -173,7 +154,7 @@
 
 
 
-    
+
     <!-- Moment.js -->
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
     <!-- jQuery Library -->
@@ -185,11 +166,10 @@
 
     <script src="http://code.responsivevoice.org/responsivevoice.js"></script>
 
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzM__JkWwv3yQDfugZDCdqfY21F48PtyA&callback=initMap">
-    </script>
+    <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzM__JkWwv3yQDfugZDCdqfY21F48PtyA&callback=initMap">
+    </script> -->
 
-    
+
 
     <script src="./voiceApi/voice.js"></script>
 

@@ -1,40 +1,146 @@
-var showFirstScreen;
+var showFirstScreen = false;
+var showSecondScreen = false;
+var showSettings = false;
+
+var firstScreen = $('#firstScreen');
+var secondScreen = $('#secondScreenMain');
+var settingsScreen = $('#settingsScreen');
+
+function switchScreens() {
+    if (showFirstScreen === true) {
+        showSecondScreen = false;
+        showSettings = false;
+        firstScreen.css('display', 'block');
+        secondScreen.css('display', 'none');
+        settingsScreen.css('display', 'none');
+        console.log("first screen on");
+    } else if (showSecondScreen === true) {
+        showFirstScreen = false;
+        showSettings = false;
+        secondScreen.css('display', 'block');
+        firstScreen.css('display', 'none');
+        settingsScreen.css('display', 'none');
+        console.log("second screen on");
+    } else if (showSettings === true) {
+        showFirstScreen = false;
+        showSecondScreen = false;
+        settingsScreen.css('display', 'block');
+        firstScreen.css('display', 'none');
+        secondScreen.css('display', 'none');
+        console.log("settings screen on");
+    }
+}
+
+
+
+var user = {
+    name: "",
+    topic: "",
+    todo: {
+        item: ""
+    }
+
+}
 
 // store user name
 var userName;
-var storedName;
+
+var storedUser;
+
+storedUser = JSON.parse(localStorage.getItem('current'));
 
 
+if (storedUser == undefined) {
+    showFirstScreen = true;
+    switchScreens();
+} else {
+    showFirstScreen = false;
+    showSecondScreen = true;
+    switchScreens();
+}
 
-$('#submitBtn').on('click', function () {
-    userName = $('#name').val().trim();
-    if(userName == ""){
-        ;// tell user to enter a value
+
+$('#first-submit-btn').click(function (event) {
+    event.preventDefault();
+    userName = $('#first-name').val().trim();
+
+    if (userName == "") {
+        ;
+        // showFirstScreen = true;
+        // switchScreens(); // tell user to enter a value
     } else {
-        localStorage.setItem('userName', userName);
+        user.name = userName;
+        console.log("the user name is " + user.name);
+        localStorage.setItem('current', JSON.stringify(user));
+        storedUser = JSON.parse(localStorage.getItem('current'));
+        console.log(storedUser.name);
+
+        showSecondScreen = true;
+        showFirstScreen = false;
+        switchScreens();
     }
+    return storedUser;
 });
 
-//retrieving name
-storedName = localStorage.getItem('userName');
 
-// name on second screen
-$('#name2').html(storedName);
+console.log(storedUser);
+console.log("////////////////");
+
+//retriving user information
 
 
+
+
+// if (userName != null) {
+//     showSecondScreen = true;
+//     switchScreens();
+// } else {
+//     showFirstScreen = true;
+//     switchScreens();
+// }
+
+// if (storedUser == null) {
+//     showFirstScreen = true;
+//     switchScreens();
+// } else {
+//     showSecondScreen = true;
+//     switchScreens();
+// }
+
+
+// if (showSecondScreen === true) {
+
+// } else {
+//     firstScreen = true;
+//     switchScreens();
+// }
+
+
+// console.log(storedUser);
+// console.log(storedUser.name);
 
 //if user name set, hide first screen
-if (storedName === null) {
-    showFirstScreen = true;
-} else {
-    showFirstScreen = false; //change this to false
-}
+// if (storedUser.name === null) {
+//     showFirstScreen = true;
+// } else {
+//     showFirstScreen = false; //change this to false
+// }
 
-if(showFirstScreen){
-    $('#firstScreen').css('display', 'block');
-} else {
-    $('#firstScreen').css('display', 'none');
-}
+// if(showFirstScreen){
+//     $('#firstScreen').css('display', 'block');
+// } else {
+//     $('#firstScreen').css('display', 'none');
+// }
+
+
+
+
+
+//name on second screen
+$('#name2').html(storedUser.name);
+
+
+
 
 
 
@@ -65,23 +171,25 @@ $(document).ready(function () {
 // ____________________________
 
 var updateBackground = function () {
-   number = Math.floor(Math.random() * 100);
-   console.log(number);
-if(number > 9){
-    $('body').css('backgroundImage', 'url(./assets/imgs/0' + number + '.jpg');
-} else if (number === 0){
-    number = 100;
-    $('body').css('backgroundImage', 'url(./assets/imgs/' + number + '.jpg');
-} else if(number < 10){
-    $('body').css('backgroundImage', 'url(./assets/imgs/00' + number + '.jpg');
-} 
+    number = Math.floor(Math.random() * 100);
+    if (number > 9) {
+        $('body').css('backgroundImage', 'url(./assets/imgs/0' + number + '.jpg');
+    } else if (number === 0) {
+        number = 100;
+        $('body').css('backgroundImage', 'url(./assets/imgs/' + number + '.jpg');
+    } else if (number < 10) {
+        $('body').css('backgroundImage', 'url(./assets/imgs/00' + number + '.jpg');
+    }
 };
 
-$(document).ready(function(){
-   updateBackground();
-   var dayInMilliseconds = 1000 * 60 * 60 * 24;
-   setInterval(updateBackground, dayInMilliseconds);
+$(document).ready(function () {
+    updateBackground();
+    var dayInMilliseconds = 1000 * 60 * 60 * 24;
+    setInterval(updateBackground, dayInMilliseconds);
 });
+
+
+//just to edit first screen
 
 
 
