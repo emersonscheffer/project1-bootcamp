@@ -61,21 +61,29 @@ $(document).ready(function () {
 });
 
 
-//background changing
-var number = Math.floor(Math.random() * 100);
+// CHANGE BACKGROUND EVERY DAY
+// ____________________________
 
-console.log(number);
+var updateBackground = function () {
+   number = Math.floor(Math.random() * 100);
+   console.log(number);
 if(number > 9){
     $('body').css('backgroundImage', 'url(./assets/imgs/0' + number + '.jpg');
-
 } else if (number === 0){
     number = 100;
     $('body').css('backgroundImage', 'url(./assets/imgs/' + number + '.jpg');
-
 } else if(number < 10){
     $('body').css('backgroundImage', 'url(./assets/imgs/00' + number + '.jpg');
-
 } 
+};
+
+$(document).ready(function(){
+   updateBackground();
+   var dayInMilliseconds = 1000 * 60 * 60 * 24;
+   setInterval(updateBackground, dayInMilliseconds);
+});
+
+
 
 //   // Initialize Firebase
 //   var config = {
