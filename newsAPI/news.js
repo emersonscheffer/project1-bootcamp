@@ -1,4 +1,4 @@
-let category = "business";
+let category = "general";
 let size = 3;
 // Make category equal to the user's preferences such as: business entertainment general health science sports technology
 // ______________________________________________________
