@@ -1,4 +1,4 @@
-let queryQuoteURL = "http://ron-swanson-quotes.herokuapp.com/v2/quotes";
+let queryQuoteURL = "https://ron-swanson-quotes.herokuapp.com/v2/quotes";
 // Run AJAX call to get Ron Swanson quote
 $.ajax({
 url: queryQuoteURL,
